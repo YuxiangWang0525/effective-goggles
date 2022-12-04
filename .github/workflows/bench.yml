@@ -27,11 +27,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Download
-        run: sudo wget https://cdn.geekbench.com/Geekbench-5.4.1-Linux.tar.gz
+        run: git clone https://github.com/kdlucas/byte-unixbench.git
         
       # Runs a set of commands using the runners shell
       - name: Run Bench And Display
         run: |
-          tar xf Geekbench-5.4.1-Linux.tar.gz
-          cd Geekbench-5.4.1-Linux
-           ./geekbench5
+          cd byte-unixbench/UnixBench
+          make && ./Run
